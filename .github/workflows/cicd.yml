@@ -21,18 +21,21 @@ jobs:
               run: echo "code will create"
     
     build:
+        needs: [code]
         runs-on: ubuntu-latest
         steps:
             - name: build the code
               run: echo "code will build"
     
     test:
+        needs: [code,build]
         runs-on: ubuntu-latest
         steps:
             - name: test the code
               run: echo "code will test"
 
     deploy:
+        needs: [code,build,test]
         runs-on: ubuntu-latest
         steps:
             - name: deploy the code
