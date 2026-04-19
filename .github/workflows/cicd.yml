@@ -1,0 +1,41 @@
+name: my_workflow
+
+on: 
+    workflow_dispatch: 
+        inputs:
+            environment:
+                description: this is the workflow where the cicd pipeline runs.
+                default: 'dev'
+                required: true
+                type: choice
+                options:
+                    - dev
+                    - prod
+                    - stag
+
+jobs:
+    code:
+        runs-on: ubuntu-latest
+        steps:
+            - name: devlop the code
+              run: echo "code will create"
+    
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: build the code
+              run: echo "code will build"
+    
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: test the code
+              run: echo "code will test"
+
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: deploy the code
+              run: echo "code will deploy"
+
+    
