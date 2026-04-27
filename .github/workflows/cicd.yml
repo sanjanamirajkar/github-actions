@@ -1,45 +1,39 @@
 name: my_workflow
 
-on: 
-    workflow_dispatch: 
-        inputs:
-            environment:
-                description: this is the workflow where the cicd pipeline runs.
-                default: 'dev'
-                required: true
-                type: choice
-                options:
-                    - dev
-                    - prod
-                    - stag
+on:
+    push:
+        branches: [main]
+
+    workflow_dispatch:
+
+        
+permissions:
+    pages: write
+    id-token: write
+    contents: read
+
 
 jobs:
-    code:
-        runs-on: ubuntu-latest
-        steps:
-            - name: devlop the code
-              run: echo "code will create"
-    
-    build:
-        needs: [code]
-        runs-on: ubuntu-latest
-        steps:
-            - name: build the code
-              run: echo "code will build"
-    
-    test:
-        needs: [code,build]
-        runs-on: ubuntu-latest
-        steps:
-            - name: test the code
-              run: echo "code will test"
-
     deploy:
-        if: inputs.environment == 'dev'
-        needs: [code,build,test]
         runs-on: ubuntu-latest
+
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+
         steps:
-            - name: deploy the code
-              run: echo "code will deploy"
+          - name: checkout pages
+            uses: actions/checkout@v4
+
+          - name: configure pages
+            uses: actions/configure-pages@v4
+
+          - name: upload pages
+            uses: actions/upload-pages-artifact@v4
+            with:
+                path: "."
+
+          - name: deploy pages
+            uses: actions/deploy-pages@v4
 
     
