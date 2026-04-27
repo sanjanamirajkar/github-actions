@@ -30,5 +30,3 @@ jobs:
                     ${{ vars.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.ref_name }}
                     ${{ vars.DOCKERHUB_USERNAME }}/github-actions-app:latest
                     ${{ vars.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.sha }}
-
-

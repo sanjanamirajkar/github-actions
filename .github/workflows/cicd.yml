@@ -35,5 +35,3 @@ jobs:
 
           - name: deploy pages
             uses: actions/deploy-pages@v4
-
-    
