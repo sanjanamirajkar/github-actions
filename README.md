@@ -71,9 +71,7 @@ push to main
 | Concept | Where to Find It |
 |---------|-----------------|
 | Push trigger | [devsecops-pipeline.yml](.github/workflows/devsecops-pipeline.yml) |
-| Manual trigger (`workflow_dispatch`) | 
-
-[cicd.yml](.github/workflows/cicd.yml) |
+| Manual trigger (`workflow_dispatch`) | [cicd.yml](.github/workflows/cicd.yml) |
 | Input parameters (`type: choice`) | [cicd.yml](.github/workflows/cicd.yml) |
 | Job dependencies (`needs`) | [cicd.yml](.github/workflows/cicd.yml), [devsecops-pipeline.yml](.github/workflows/devsecops-pipeline.yml) |
 | Conditional execution (`if`) | [cicd.yml](.github/workflows/cicd.yml), [deploy-app.yml](.github/workflows/deploy-app.yml) |
