@@ -1,0 +1,19 @@
+
+name: DevSecOps pipeline
+
+on: 
+    workflow_dispatch:
+      
+jobs:
+    code-quality:
+        uses: ./.github/workflows/code-quality.yml
+
+    secrets-scan:
+        uses: ./.github/workflows/secrets-scan.yml
+        secrets: inherit
+
+    dependencies-scan:
+        uses: ./.github/workflows/dependencies-scan.yml
+
+    docker-lint-scan:
+        uses: ./.github/workflows/docker-lint.yml
