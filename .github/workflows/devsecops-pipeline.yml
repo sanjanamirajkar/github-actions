@@ -4,7 +4,7 @@ name: DevSecOps pipeline
 on: 
     workflow_dispatch:
       
-jobs:
+jobs:  # Continous Integration with Security Scanning (CI)
     code-quality:
         uses: ./.github/workflows/code-quality.yml
 
@@ -19,7 +19,7 @@ jobs:
         uses: ./.github/workflows/docker-lint.yml
 
 
-    # Docker build and push
+    # Docker build and push (CD)
     docker-build:
         uses: ./.github/workflows/docker-build-push.yml
         secrets: inherit
