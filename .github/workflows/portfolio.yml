@@ -35,4 +35,5 @@ jobs:
             
             # make website live
             - name: deploy github pages
+              id: deployment
               uses: actions/deploy-pages@v4       
