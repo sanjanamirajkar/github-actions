@@ -1,89 +1,714 @@
-<!-- CHANGE ONLY THESE DETAILS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sanjana Mirajkar | DevOps Engineer</title>
 
-<!-- NAVBAR NAME -->
-<h1>Sanjana Mirajkar</h1>
-<p>DevOps Engineer</p>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- HERO TITLE -->
-<h2 class="title">
-  I am a <span style="color: rgba(255,122,24,.95);">DevOps Engineer</span> building
-  <span style="color: rgba(74,163,255,.95);">real-world pipelines</span> and cloud systems.
-</h2>
+  <!-- Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-<!-- HERO DESCRIPTION -->
-<p class="subtitle">
-  Passionate DevOps Engineer skilled in <b>CI/CD</b>, <b>AWS</b>, <b>Docker</b>, and <b>Kubernetes</b>.
-  I build secure and scalable systems using modern DevSecOps practices.
-</p>
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-<!-- STATS -->
-<div class="hero-stats">
-  <div class="stat">
-    <b>DevOps Projects</b>
-    <span>CI/CD, Docker, Kubernetes</span>
-  </div>
-  <div class="stat">
-    <b>AWS Cloud</b>
-    <span>EC2, S3, IAM</span>
-  </div>
-  <div class="stat">
-    <b>Learning</b>
-    <span>DevSecOps & Automation</span>
-  </div>
-</div>
+  <style>
 
-<!-- PROFILE RIGHT -->
-<h3>Sanjana Mirajkar</h3>
-<p>DevOps Engineer • Cloud & Automation</p>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
 
-<!-- MINI DETAILS -->
-<div class="row">
-  <span>Focus</span>
-  <b>DevOps & Cloud Engineering</b>
-</div>
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
 
-<div class="row">
-  <span>Skills</span>
-  <b>Docker, Kubernetes, GitHub Actions</b>
-</div>
+    ::selection{
+      background:#00f7ff;
+      color:black;
+    }
 
-<div class="row">
-  <span>Learning</span>
-  <b>DevSecOps & Security</b>
-</div>
+    /* Scrollbar */
 
-<div class="row">
-  <span>Goal</span>
-  <b>Build scalable & secure systems</b>
-</div>
+    ::-webkit-scrollbar{
+      width:10px;
+    }
 
-<!-- ABOUT -->
-<p class="subtitle">
-  I am a passionate DevOps Engineer focused on building real-world projects using modern tools.
-  I enjoy working with cloud infrastructure, CI/CD pipelines, and automation.
-</p>
+    ::-webkit-scrollbar-track{
+      background:#0d1117;
+    }
 
-<!-- SKILLS -->
-<span class="chip">AWS</span>
-<span class="chip">Docker</span>
-<span class="chip">Kubernetes</span>
-<span class="chip">GitHub Actions</span>
-<span class="chip">Jenkins</span>
-<span class="chip">Terraform</span>
-<span class="chip">Trivy</span>
-<span class="chip">SonarQube</span>
+    ::-webkit-scrollbar-thumb{
+      background:#00f7ff;
+      border-radius:20px;
+    }
 
-<!-- PROJECTS -->
-<h3>CI/CD Pipeline Project</h3>
-<p>Automated build, scan, and deployment using GitHub Actions, Docker, and AWS EC2.</p>
+    /* Navbar */
 
-<h3>Dockerized Flask App</h3>
-<p>Deployed Flask application using Docker and docker-compose on EC2.</p>
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      background:rgba(0,0,0,0.4);
+      backdrop-filter:blur(10px);
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
 
-<h3>DevSecOps Pipeline</h3>
-<p>Integrated security scanning tools like Trivy and SonarQube in CI/CD pipeline.</p>
+    nav h2{
+      color:#00f7ff;
+      font-size:28px;
+    }
 
-<!-- CONTACT -->
-<p>Email: sanjanamirajkar22@gmail.com</p>
-<p>LinkedIn: www.linkedin.com/in/sanjana-mirajkar-1671b5355</p>
-<p>GitHub: https://github.com/sanjanamirajkar</p>
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    nav ul li a:hover{
+      color:#00f7ff;
+    }
+
+    /* Hero Section */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:120px 8%;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:600px;
+      height:600px;
+      background:#00f7ff20;
+      border-radius:50%;
+      top:-200px;
+      right:-200px;
+      filter:blur(100px);
+    }
+
+    .hero-left{
+      width:55%;
+      z-index:1;
+    }
+
+    .hero-left h3{
+      color:#00f7ff;
+      font-size:28px;
+      margin-bottom:10px;
+    }
+
+    .hero-left h1{
+      font-size:65px;
+      line-height:80px;
+      margin-bottom:20px;
+    }
+
+    .hero-left h1 span{
+      color:#00f7ff;
+    }
+
+    .typing{
+      font-size:28px;
+      font-weight:600;
+      color:#00f7ff;
+      margin-bottom:25px;
+    }
+
+    .hero-left p{
+      color:#c7c7c7;
+      line-height:1.9;
+      margin-bottom:35px;
+      font-size:16px;
+    }
+
+    .btns{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:40px;
+      border:none;
+      background:#00f7ff;
+      color:black;
+      font-weight:600;
+      text-decoration:none;
+      transition:0.4s;
+      box-shadow:0 0 20px #00f7ff70;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 30px #00f7ff;
+    }
+
+    .btn-outline{
+      background:transparent;
+      border:2px solid #00f7ff;
+      color:#00f7ff;
+    }
+
+    .hero-right{
+      width:40%;
+      display:flex;
+      justify-content:center;
+      position:relative;
+      z-index:1;
+    }
+
+    .image-box{
+      width:380px;
+      height:380px;
+      border-radius:50%;
+      overflow:hidden;
+      border:5px solid #00f7ff;
+      box-shadow:0 0 60px #00f7ff70;
+      animation:float 4s ease-in-out infinite;
+    }
+
+    .image-box img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-20px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    /* Section */
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:45px;
+      margin-bottom:70px;
+      color:#00f7ff;
+      position:relative;
+    }
+
+    .section-title::after{
+      content:'';
+      position:absolute;
+      width:120px;
+      height:4px;
+      background:#00f7ff;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:-15px;
+      border-radius:20px;
+    }
+
+    /* Skills */
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .skill-card{
+      background:#0d1117;
+      padding:30px;
+      border-radius:20px;
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.1);
+      text-align:center;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 30px #00f7ff40;
+    }
+
+    .skill-card i{
+      font-size:45px;
+      color:#00f7ff;
+      margin-bottom:20px;
+    }
+
+    .skill-card h3{
+      margin-bottom:10px;
+    }
+
+    /* Tools */
+
+    .tools{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:20px;
+    }
+
+    .tool{
+      padding:15px 25px;
+      background:#0d1117;
+      border-radius:50px;
+      border:1px solid rgba(255,255,255,0.1);
+      transition:0.4s;
+    }
+
+    .tool:hover{
+      background:#00f7ff;
+      color:black;
+      transform:scale(1.1);
+    }
+
+    /* Projects */
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:40px;
+    }
+
+    .project-card{
+      background:#0d1117;
+      border-radius:25px;
+      overflow:hidden;
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 30px #00f7ff40;
+    }
+
+    .project-content{
+      padding:30px;
+    }
+
+    .project-content h3{
+      color:#00f7ff;
+      margin-bottom:15px;
+      font-size:25px;
+    }
+
+    .project-content p{
+      color:#c7c7c7;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .project-content a{
+      text-decoration:none;
+      color:black;
+      background:#00f7ff;
+      padding:12px 22px;
+      border-radius:30px;
+      font-weight:600;
+      display:inline-block;
+      transition:0.4s;
+    }
+
+    .project-content a:hover{
+      transform:scale(1.05);
+    }
+
+    /* Contact */
+
+    .socials{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+
+    .socials a{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#0d1117;
+      color:#00f7ff;
+      font-size:28px;
+      transition:0.4s;
+      text-decoration:none;
+    }
+
+    .socials a:hover{
+      background:#00f7ff;
+      color:black;
+      transform:translateY(-10px);
+      box-shadow:0 0 30px #00f7ff80;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#aaa;
+      border-top:1px solid rgba(255,255,255,0.1);
+      margin-top:50px;
+    }
+
+    /* Responsive */
+
+    @media(max-width:1000px){
+
+      .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        gap:60px;
+      }
+
+      .hero-left,
+      .hero-right{
+        width:100%;
+      }
+
+      .hero-left h1{
+        font-size:48px;
+        line-height:60px;
+      }
+
+      .btns{
+        justify-content:center;
+      }
+
+      nav ul{
+        display:none;
+      }
+
+      .image-box{
+        width:300px;
+        height:300px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+
+  <nav>
+    <h2>Sanjana.</h2>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-left" data-aos="fade-right">
+
+      <h3>Hello, I'm</h3>
+
+      <h1>
+        Sanjana <span>Mirajkar</span>
+      </h1>
+
+      <div class="typing"></div>
+
+      <p>
+        Passionate and detail-oriented DevOps Engineer with 1 year of hands-on
+        experience practicing and working with various DevOps tools and technologies.
+        Skilled in building CI/CD pipelines, automating deployment processes,
+        managing cloud infrastructure, and improving system reliability.
+        Experienced with Docker, Kubernetes, Jenkins, Git, Terraform,
+        Ansible, AWS, Linux, monitoring tools and DevSecOps practices.
+      </p>
+
+      <div class="btns">
+        <a href="#projects" class="btn">View Projects</a>
+
+        <a href="Sanjana_Resume.pdf" class="btn btn-outline" download>
+          Download Resume
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-right" data-aos="fade-left">
+
+      <div class="image-box">
+        <img src="your-image.jpg" alt="Sanjana">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Skills -->
+
+  <section id="skills">
+
+    <h2 class="section-title" data-aos="zoom-in">
+      Skills
+    </h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card" data-aos="fade-up">
+        <i class="fab fa-aws"></i>
+        <h3>Cloud Computing</h3>
+        <p>AWS, Azure, EC2, IAM, S3, VPC, CloudWatch</p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up">
+        <i class="fab fa-docker"></i>
+        <h3>Containerization</h3>
+        <p>Docker, Kubernetes, ECS, Container Security</p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up">
+        <i class="fas fa-infinity"></i>
+        <h3>CI/CD</h3>
+        <p>Jenkins, GitHub Actions, Automation Pipelines</p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up">
+        <i class="fas fa-code-branch"></i>
+        <h3>Version Control</h3>
+        <p>Git, GitHub, Bitbucket</p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up">
+        <i class="fas fa-server"></i>
+        <h3>Infrastructure as Code</h3>
+        <p>Terraform, CloudFormation</p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up">
+        <i class="fas fa-terminal"></i>
+        <h3>Operating Systems</h3>
+        <p>Linux, Ubuntu, CentOS, Windows Server</p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up">
+        <i class="fas fa-chart-line"></i>
+        <h3>Monitoring</h3>
+        <p>Prometheus, Grafana, CloudWatch</p>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up">
+        <i class="fas fa-shield-alt"></i>
+        <h3>DevSecOps</h3>
+        <p>Security Scanning, SAST, DAST, Trivy</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Tools -->
+
+  <section id="tools">
+
+    <h2 class="section-title" data-aos="zoom-in">
+      DevOps Tools
+    </h2>
+
+    <div class="tools">
+
+      <div class="tool">Docker</div>
+      <div class="tool">Kubernetes</div>
+      <div class="tool">Jenkins</div>
+      <div class="tool">GitHub Actions</div>
+      <div class="tool">Terraform</div>
+      <div class="tool">Ansible</div>
+      <div class="tool">AWS</div>
+      <div class="tool">Linux</div>
+      <div class="tool">Git</div>
+      <div class="tool">Prometheus</div>
+      <div class="tool">Grafana</div>
+      <div class="tool">CloudFormation</div>
+      <div class="tool">CloudWatch</div>
+      <div class="tool">Bitbucket</div>
+      <div class="tool">Nginx</div>
+      <div class="tool">Python</div>
+      <div class="tool">Bash</div>
+      <div class="tool">CI/CD</div>
+      <div class="tool">DevSecOps</div>
+      <div class="tool">ECS</div>
+
+    </div>
+
+  </section>
+
+  <!-- Projects -->
+
+  <section id="projects">
+
+    <h2 class="section-title" data-aos="zoom-in">
+      Featured Projects
+    </h2>
+
+    <div class="projects">
+
+      <!-- Project 1 -->
+
+      <div class="project-card" data-aos="fade-up">
+
+        <div class="project-content">
+
+          <h3>GitHub Actions DevSecOps CI/CD Pipeline</h3>
+
+          <p>
+            Designed and implemented a complete CI/CD pipeline using
+            GitHub Actions with Docker integration and DevSecOps practices.
+            Automated the build, test, and deployment process while improving
+            application security through vulnerability scanning and secure
+            containerization techniques. The project demonstrates modern
+            DevOps automation with secure deployment workflows.
+          </p>
+
+          <a href="https://github.com/sanjanamirajkar/github-actions"
+            target="_blank">
+            View Project
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- Project 2 -->
+
+      <div class="project-card" data-aos="fade-up">
+
+        <div class="project-content">
+
+          <h3>Flask App Deployment on AWS ECS</h3>
+
+          <p>
+            Built and deployed a containerized Flask application using Docker
+            multi-stage builds for optimized image size and better performance.
+            Configured AWS ECS for scalable deployment and implemented modern
+            container deployment practices. This project showcases cloud-native
+            application deployment with efficient Docker architecture.
+          </p>
+
+          <a href="https://github.com/sanjanamirajkar/flask-app-ecs"
+            target="_blank">
+            View Project
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Contact -->
+
+  <section id="contact">
+
+    <h2 class="section-title" data-aos="zoom-in">
+      Connect With Me
+    </h2>
+
+    <div class="socials">
+
+      <a href="https://github.com/sanjanamirajkar" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/sanjana-mirajkar-1671b5355"
+        target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <a href="mailto:sanjanamirajkar22@gmail.com">
+        <i class="fas fa-envelope"></i>
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+    © 2026 Sanjana Mirajkar | DevOps & Cloud Engineer
+  </footer>
+
+  <!-- Typed JS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- AOS -->
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+
+    // Typed Animation
+
+    var typed = new Typed(".typing", {
+      strings: [
+        "DevOps Engineer",
+        "Cloud Engineer",
+        "AWS Enthusiast",
+        "CI/CD Automation Engineer",
+        "DevSecOps Practitioner"
+      ],
+
+      typeSpeed:80,
+      backSpeed:50,
+      loop:true
+    });
+
+    // AOS
+
+    AOS.init({
+      duration:1200,
+    });
+
+  </script>
+
+</body>
+</html>
